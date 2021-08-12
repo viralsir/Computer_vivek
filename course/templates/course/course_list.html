@@ -38,6 +38,7 @@
                                             <th>Duration</th>
                                             <th>Fees</th>
                                             <th>Status</th>
+                                            <th> Action </th>
 
                                         </tr>
                                     </thead>
@@ -48,7 +49,7 @@
                                             <th>Duration</th>
                                             <th>Fees</th>
                                             <th>Status</th>
-
+                                            <th> Action </th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -59,6 +60,13 @@
                                         <td> {{  course.durations }}</td>
                                         <td> {{ course.fees }}</td>
                                         <td> {{ course.status }}</td>
+                                        <td><a  class="btn btn-primary" href="{% url 'course-update'  course.id %}">
+                                              Update
+                                        </a>
+                                        <a  class="btn btn-danger" href="{% url 'course-delete'  course.id %}">
+                                              Delete
+                                        </a>
+                                        </td>
                                         </tr>
                                     {% endfor %}
                                     </tbody>
