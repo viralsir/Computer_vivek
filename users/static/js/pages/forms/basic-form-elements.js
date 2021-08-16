@@ -9,8 +9,8 @@ $(function () {
         weekStart: 1
     });
 
-    $('.datepicker').bootstrapMaterialDatePicker({
-        format: 'dddd DD MMMM YYYY',
+    $('#id_birth_date').bootstrapMaterialDatePicker({
+        format: 'YYYY-MM-DD',
         clearButton: true,
         weekStart: 1,
         time: false

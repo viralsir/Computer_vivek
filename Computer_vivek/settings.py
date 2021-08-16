@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'users',
     'course',
+    'student',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
