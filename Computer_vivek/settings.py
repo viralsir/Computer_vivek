@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'users',
     'course',
     'student',
+    'addmission',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',

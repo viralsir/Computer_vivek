@@ -1,0 +1,44 @@
+{%  extends "users/layout.html" %}
+{% load crispy_forms_field %}
+{% load static %}
+{% block extra_css %}
+    <!-- Bootstrap Material Datetime Picker Css -->
+    <link href="{% static 'plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css'%}" rel="stylesheet" />
+
+{% endblock %}
+{% block body %}
+  <div>
+      <form method="post">
+          {% csrf_token %}
+       <h2 class="bg-danger"> Are you sure you want to delete this student ?</h2>
+        <h1> Student Info </h1>
+        <ul>
+            <li>Student Name : {{ object.first_name }} {{ object.middle_name }} {{ object.last_name }}</li>
+            <li>Student Father Name : {{ object.father_first_name }} {{ object.father_middle_name }} {{ object.father_last_name }}</li>
+            <li>Student Email : {{ object.emailid }}</li>
+            <li>Student Phno : {{ object.phno1 }}</li>
+        </ul>
+          <input class="btn btn-danger" type="submit" value="Delete"> <a class="btn btn-info" href="{% url 'student-view' %}">cancel </a>
+        </form>
+     </div>
+
+  </div>
+{% endblock %}
+{% block extrac_js %}
+      <!-- Moment Plugin Js -->
+    <script src="{% static 'plugins/momentjs/moment.js'%}"></script>
+
+    <!-- Bootstrap Material Datetime Picker Plugin Js -->
+    <script src="{% static 'plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js'%}"></script>
+
+     <!-- Bootstrap Datepicker Plugin Js -->
+    <script src="{% static 'plugins/bootstrap-datepicker/js/bootstrap-datepicker.js'%}"></script>
+
+
+     <!-- Autosize Plugin Js -->
+    <script src="{% static 'plugins/autosize/autosize.js'%}"></script>
+    <!-- Custom Js -->
+    <script src="{% static 'js/admin.js'%}"></script>
+    <script src="{% static 'js/pages/forms/basic-form-elements.js'%}"></script>
+
+{% endblock %}
