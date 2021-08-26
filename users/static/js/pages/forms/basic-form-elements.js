@@ -15,6 +15,25 @@ $(function () {
         weekStart: 1,
         time: false
     });
+     $('#id_date').bootstrapMaterialDatePicker({
+        format: 'YYYY-MM-DD',
+        clearButton: true,
+        weekStart: 1,
+        time: false
+    });
+
+    $('#id_startdate').bootstrapMaterialDatePicker({
+        format: 'YYYY-MM-DD',
+        clearButton: true,
+        weekStart: 1,
+        time: false
+    });
+     $('#id_enddate').bootstrapMaterialDatePicker({
+        format: 'YYYY-MM-DD',
+        clearButton: true,
+        weekStart: 1,
+        time: false
+    });
 
     $('.timepicker').bootstrapMaterialDatePicker({
         format: 'HH:mm',

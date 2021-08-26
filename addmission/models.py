@@ -13,7 +13,7 @@ class addmission(models.Model):
     enddate=models.DateField()
     Fees=models.IntegerField()
     no_of_days=models.IntegerField()
-    remarks=models.TextField()
+    remarks=models.TextField(blank=True,null=True)
     pending_fees=models.IntegerField()
 
 
