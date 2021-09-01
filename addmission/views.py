@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import CreateView,UpdateView,ListView,DeleteView,DetailView
 from .models import addmission
+
 # Create your views here.
 class NewAddmissionView(CreateView):
     model = addmission
