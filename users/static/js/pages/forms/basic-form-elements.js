@@ -9,6 +9,12 @@ $(function () {
         weekStart: 1
     });
 
+     $('#id_cheque_date').bootstrapMaterialDatePicker({
+        format: 'YYYY-MM-DD',
+        clearButton: true,
+        weekStart: 1,
+        time: false
+    });
     $('#id_birth_date').bootstrapMaterialDatePicker({
         format: 'YYYY-MM-DD',
         clearButton: true,

@@ -5,7 +5,6 @@ from .models import payment
 class NewPayment(CreateView):
     model = payment
     fields = '__all__' #['','']
-
 class ViewPayment(ListView):
     model = payment
     fields = '__all__'

@@ -1,5 +1,6 @@
 from django.db import models
 from addmission.models import addmission
+from django.urls import reverse
 # Create your models here.
 
 class payment(models.Model):
@@ -16,4 +17,7 @@ class payment(models.Model):
 
     def __str__(self):
         return f"{self.id}"
+
+    def get_absolute_url(self):
+        return reverse('payment-view')
 
