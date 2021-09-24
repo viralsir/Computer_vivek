@@ -77,7 +77,7 @@
                                         {% endif %}
                                     </div>
                                 </div>
-                                 <div class="form-group form-float">
+                                 <div class="form-group form-float" id="bname">
                                     <div class="form-line">
                                      <label class="m-l-20">Bank Name</label>
                                     {% crispy_field form.bank_name 'class' 'form-control' %}
@@ -88,7 +88,7 @@
                                         {% endif %}
                                     </div>
                                 </div>
-                                <div class="form-group form-float">
+                                <div class="form-group form-float" id="brname">
                                     <div class="form-line">
                                      <label class="m-l-20">Branch Name</label>
                                     {% crispy_field form.branch_name 'class' 'form-control' %}
@@ -99,7 +99,7 @@
                                         {% endif %}
                                     </div>
                                 </div>
-                                 <div class="form-group form-float">
+                                 <div class="form-group form-float" id="chdate">
                                     <div class="form-line">
                                      <label class="m-l-20"> Cheque Date</label>
                                     {% crispy_field form.cheque_date 'class' 'form-control' %}
@@ -110,18 +110,8 @@
                                         {% endif %}
                                     </div>
                                 </div>
-                                 <div class="form-group form-float">
-                                    <div class="form-line">
-                                     <label class="m-l-20">Cheque Date</label>
-                                    {% crispy_field form.cheque_date 'class' 'form-control' %}
-                                        {% if form.cheque_date.errors %}
-                                            {% for error in form.cheque_date.errors %}
-                                                <div class="invalid-feedback">{{ error }}</div>
-                                            {% endfor %}
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            <div class="form-group form-float">
+
+                            <div class="form-group form-float" id="chno">
                                     <div class="form-line">
                                      <label class="m-l-20">Cheque No</label>
                                     {% crispy_field form.cheque_no 'class' 'form-control' %}
@@ -132,7 +122,7 @@
                                         {% endif %}
                                     </div>
                                 </div>
-                                 <div class="form-group form-float">
+                                 <div class="form-group form-float" id="rid">
                                     <div class="form-line">
                                      <label class="m-l-20">Ref Id</label>
                                     {% crispy_field form.ref_id 'class' 'form-control' %}
@@ -171,5 +161,42 @@
     <!-- Custom Js -->
     <script src="{% static 'js/admin.js'%}"></script>
     <script src="{% static 'js/pages/forms/basic-form-elements.js'%}"></script>
+
+    <script>
+            document.addEventListener('DOMContentLoaded',function(){
+
+                document.querySelector("#id_type").onchange=function(){
+                    console.log(this.value);
+                    if(this.value == 'cash')
+                    {
+                         document.querySelector("#bname").style.display='none';
+                         document.querySelector("#brname").style.display='none';
+                         document.querySelector("#chdate").style.display='none';
+                         document.querySelector("#chno").style.display='none';
+                         document.querySelector("#rid").style.display='none';
+                    }
+                    else if(this.value == 'cheque')
+                    {
+                         document.querySelector("#bname").style.display='block';
+                         document.querySelector("#brname").style.display='block';
+                         document.querySelector("#chdate").style.display='block';
+                         document.querySelector("#chno").style.display='block';
+                         document.querySelector("#rid").style.display='none';
+
+                    }
+                    else
+                    {
+                         document.querySelector("#bname").style.display='none';
+                         document.querySelector("#brname").style.display='none';
+                         document.querySelector("#chdate").style.display='none';
+                         document.querySelector("#chno").style.display='none';
+                         document.querySelector("#rid").style.display='block';
+                    }
+
+
+                }
+            })
+    </script>
+
 
 {% endblock %}
