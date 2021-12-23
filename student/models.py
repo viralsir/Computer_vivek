@@ -18,6 +18,7 @@ class student(models.Model):
     birth_date=models.DateField()
     gender=models.CharField(max_length=20)
     emailid=models.EmailField()
+    photo=models.ImageField(upload_to='student_photo/',default="default.jpg")
 
     def __str__(self):
         return f"{self.first_name} {self.middle_name} {self.last_name}"
